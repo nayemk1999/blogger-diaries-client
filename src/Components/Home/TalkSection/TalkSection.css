@@ -1,0 +1,54 @@
+.talk-section {
+    background-image: url('https://www.wanderon.in/svg/home/cta.svg');
+    padding: 2.5vw 15vw 2.5vw 10vw;
+    margin-top: 64px;
+}
+
+.talk-section-content {
+    display: grid;
+    grid-template-areas: "texts images" "btn images" "ps images";
+    background-color: white;
+    border-radius: 2vw;
+    padding: 2.5vw 4vw;
+}
+
+.talk-content {
+    grid-area: texts / texts / texts / texts;
+    width: 28vw;
+    font-size: 1.8vw;
+    font-weight: 600;
+    color: rgb(19, 36, 63);
+}
+
+.talkBtn {
+    grid-area: btn / btn / btn / btn;
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: white;
+    width: 16vw;
+    height: 4vw;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: rgb(19, 36, 63);
+    border-radius: 1vw;
+    margin-top: 2vw;
+    cursor: pointer;
+}
+
+.talk-bottom {
+    grid-area: ps / ps / ps / ps;
+    font-size: 1vw;
+    font-weight: 600;
+    color: rgb(58, 58, 58);
+    margin-top: 1vw;
+}
+
+.talk-section-content img {
+    grid-area: images / images / images / images;
+    height: 18vw;
+    justify-self: end;
+}
