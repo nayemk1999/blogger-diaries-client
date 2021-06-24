@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
-import ProfilePopper from '../ProfilePopper/ProfilePopper';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../../../App';
+import ProfilePopper from '../../../ProfilePopper/ProfilePopper';
 import './Navbar.css'
 const NavBar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [isSticky, setSticky] = useState(false);
     const [isCollapsed, setCollapsed] = useState(null);
 
@@ -27,24 +30,24 @@ const NavBar = () => {
                         <a href="+91-8887756502" alt='telNumber'>+91-8887756502</a>
                     </div>
                     <Nav className="nav-text text-center">
-                        <Nav.Link to='/home' className="mr-3"><strong>Home</strong>
+                        <Nav.Link as={Link} to='/home' className="mr-3"><strong>Home</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        <Nav.Link href="#about" className="mr-3"><strong>About</strong>
+                        <Nav.Link as={Link} href="#about" className="mr-3"><strong>About</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        <Nav.Link href="#service" className="mr-3"><strong>Service</strong>
+                        <Nav.Link as={Link} href="#service" className="mr-3"><strong>Service</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        <Nav.Link href="#contact" className="mr-3"><strong>Contact</strong>
+                        <Nav.Link as={Link} href="#contact" className="mr-3"><strong>Contact</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        <Nav.Link to='/dashboard/profile' className="mr-3"><strong>Dashboard</strong>
+                        <Nav.Link as={Link} to='/dashboard/profile' className="mr-3"><strong>Dashboard</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        {/* {
-                        isSignedIn ? <ProfilePopper /> : <Button as={Link} to='/login' variant="info" className='main-button'>Login</Button>
-                    } */}
+                        {
+                        loggedInUser.email ? <ProfilePopper /> : <Button as={Link} to='/login' variant="info" className='main-button'>Login</Button>
+                    }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

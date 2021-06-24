@@ -3,6 +3,7 @@ import './Carousels.css'
 
 const CarouselsContent = (props) => {
     const { biking, camping, bikingText, campingText, trekking, trekkingText, paragliding, paraglidingText, snowParadise, snowParadiseText, img, locationIcon, locationText, price, text, timeIcon, timeText } = props.propsData;
+
     const content = {
         width: "21vw",
         height: "17vw",
@@ -19,21 +20,7 @@ const CarouselsContent = (props) => {
     return (
         <div className='slide-container'>
             <div className='slide-content'>
-                <div style={content}>
-                    <div className='img-container'>
-                        <div className='img-content'>
-                            <img style={{ width: "auto", height: " 1.5vw", marginRight: "8px" }} src={camping || trekking || paragliding || snowParadise || biking} alt="" />
-                            {campingText || trekkingText || paraglidingText || snowParadiseText || bikingText}
-                        </div>
-                        <div className='img-content'>
-                            <img style={{ width: "auto", height: " 1.5vw", marginRight: "8px" }} src={ trekking || paragliding || snowParadise || biking} alt="" />
-                            { trekkingText || paraglidingText || snowParadiseText || bikingText}
-                        </div>
-                        <div className='img-content'>
-                            <img style={{ width: "auto", height: " 1.5vw", marginRight: "8px" }} src={trekking || paragliding || snowParadise || biking} alt="" />
-                            { trekkingText || paraglidingText || snowParadiseText || bikingText}
-                        </div>
-                    </div>
+                <div style={content}>      
                 </div>
             </div>
             <div >

@@ -1,53 +1,49 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .title {
-  text-transform: capitalize;
-  font-size: 2.2vw;
-  font-weight: 600;
-  color: rgb(58, 58, 58);
-  /* margin-left: 5vw; */
-  text-align: initial;
-}
-.nav-bg {
-  background-color: rgb(21, 21, 21) !important;
-  color: white !important;
+    text-transform: capitalize;
+    font-size: 2.2vw;
+    font-weight: 600;
+    color: rgb(58, 58, 58);
+    /* margin-left: 5vw; */
+    text-align: initial;
 }
 
 .slick-next,
 .slick-prev {
-  font-size: 0px;
-  line-height: 0;
-  top: 40%;
-  width: 4vw;
-  height: 4vw;
-  transform: translate(0px, -50%);
-  cursor: pointer;
-  border: none;
-  border-radius: 5vw;
-  background-color: rgb(255, 255, 255);
-  z-index: 1;
-  box-shadow: rgb(35 35 35 / 50%) 0px 0px 20px 5px;
+    font-size: 0px;
+    line-height: 0;
+    top: 40%;
+    width: 4vw;
+    height: 4vw;
+    transform: translate(0px, -50%);
+    cursor: pointer;
+    border: none;
+    border-radius: 5vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    box-shadow: rgb(35 35 35 / 50%) 0px 0px 20px 5px;
 }
 
 .slick-next:hover,
 .slick-prev:hover {
-  transform: scale(1.1);
-  top: 35%;
-  z-index: 1;
-  background-color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    top: 35%;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
 }
 
 .slick-next::before,
 .slick-prev::before {
-  font-size: 2.5vw;
-  line-height: 1;
-  opacity: 1;
-  color: rgb(10, 158, 136);
+    font-size: 2.5vw;
+    line-height: 1;
+    opacity: 1;
+    color: rgb(10, 158, 136);
 }
 
 .slick-next:before,
 [dir=rtl] .slick-prev:before {
-  content: '→' !important;
+    content: '→' !important;
 }

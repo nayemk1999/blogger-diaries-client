@@ -1,12 +1,11 @@
 import React from 'react';
 import './HeaderBody.css'
 import Typical from 'react-typical'
-import RatingHighLight from '../RatingHighLight/RatingHighLight';
 const HeaderBody = () => {
     return (
-        <div>
-            <h1 className='text-white'>India's Coolest Travel Community</h1>
-            <h4 className='text-white mb-5 mt-2'> 
+        <div className='header-body'>
+            <h1 className='text-white head-title'>Bangladesh's Coolest Blogger Dairies</h1>
+            <h4 className='text-white mb-5 mt-2 typical-content'> 
                 <Typical
                     loop={Infinity}
                     wrapper="b"
@@ -24,11 +23,10 @@ const HeaderBody = () => {
                     ]}
                 />
             </h4>
-            <div className='search-container m-auto'>
-                <input type="input" name="" id="" placeholder='Where do you wanna go?' className="input-field" />
+            <div className='search-container '>
+                <input type="input" name="" id="" placeholder='What do you Search?' className="input-field" />
                 <img src="https://www.wanderon.in/svg/search.svg" alt="" className='search-icon' />
             </div>
-            <RatingHighLight/>
         </div>
     );
 };

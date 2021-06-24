@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousels from '../../Carousel/Carousels';
-import { trendingData } from '../../SlideData/SlideData';
 import Header from '../Header/Header';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
@@ -13,8 +12,9 @@ const Home = () => {
     return (
         <div>
             <Header />
+            
             <Container>
-                <Carousels trendingData={trendingData} />
+                <Carousels />
             </Container>
             <TalkSection/>
             <Footer/>

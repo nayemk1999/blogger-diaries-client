@@ -1,6 +1,7 @@
 .search-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 30vh !important;
 }
 
 .input-field {
@@ -27,4 +28,25 @@
     padding: 0.7vw;
     border-radius: 0px 5px 5px 0px;
     margin-left: -4vw;
+}
+@media screen and (max-width: 600px) {
+    .header-container {
+        margin-top: -6vh !important;
+    }
+    .head-title {
+        width: 75vw;
+        font-size: 7vw;
+        font-weight: 700;
+        margin-bottom: 4vh !important;
+        margin-top: 10vh !important;
+        text-align: center;
+    }
+    .typical-content{
+        font-size: 4vw;
+        margin-bottom: 20vh !important;
+    }
+    .search-container{
+        margin-bottom: 50vh !important;
+    }
+        
 }
