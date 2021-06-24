@@ -1,0 +1,13 @@
+.rating-container {}
+
+.rating-container img {
+    height: 4vw;
+    margin: 0px 8px 0px 0px;
+}
+
+.rating-content {
+    font-size: 1.5vw;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+}

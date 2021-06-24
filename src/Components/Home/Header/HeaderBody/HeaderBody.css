@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-field {
+    width: 45vw;
+    height: 4vw;
+    border: 1px solid rgb(10, 158, 136);
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white !important;
+    background: rgba(190, 187, 187, 0.2);
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.search-icon {
+    height: 4vw;
+    width: 4vw;
+    background-color: rgb(10, 158, 136);
+    padding: 0.7vw;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -4vw;
+}

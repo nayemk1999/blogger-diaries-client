@@ -2,37 +2,52 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  text-transform: capitalize;
+  font-size: 2.2vw;
+  font-weight: 600;
+  color: rgb(58, 58, 58);
+  /* margin-left: 5vw; */
+  text-align: initial;
+}
+.nav-bg {
+  background-color: rgb(21, 21, 21) !important;
+  color: white !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slick-next,
+.slick-prev {
+  font-size: 0px;
+  line-height: 0;
+  top: 40%;
+  width: 4vw;
+  height: 4vw;
+  transform: translate(0px, -50%);
+  cursor: pointer;
+  border: none;
+  border-radius: 5vw;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+  box-shadow: rgb(35 35 35 / 50%) 0px 0px 20px 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slick-next:hover,
+.slick-prev:hover {
+  transform: scale(1.1);
+  top: 35%;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
+.slick-next::before,
+.slick-prev::before {
+  font-size: 2.5vw;
+  line-height: 1;
+  opacity: 1;
+  color: rgb(10, 158, 136);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slick-next:before,
+[dir=rtl] .slick-prev:before {
+  content: '→' !important;
 }
