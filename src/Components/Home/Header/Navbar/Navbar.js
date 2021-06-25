@@ -27,8 +27,8 @@ const NavBar = () => {
                 <Navbar.Toggle onClick={() => setCollapsed(!isCollapsed ? 'show' : null)} aria-controls="basic-navbar-nav" style={{ background: 'white' }} />
                 <Navbar.Collapse id="navbar-nav" className='navbar-content'>
                     <div className='contact-content'>
-                        <img src="https://www.wanderon.in/svg/nav/phone.svg" alt="" />
-                        <a href="+91-8887756502" alt='telNumber'>+91-8887756502</a>
+                        {/* <img src="https://www.wanderon.in/svg/nav/phone.svg" alt="" /> */}
+                        {/* <a href="+91-8887756502" alt='telNumber'>+91-8887756502</a> */}
                     </div>
                     <Nav className="nav-text text-center">
                         <Nav.Link as={Link} to='/home' className="mr-3"><strong>Home</strong>

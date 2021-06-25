@@ -1,19 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Carousels.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
 
 const CarouselsContent = (props) => {
-    const { biking, camping, bikingText, campingText, trekking, trekkingText, paragliding, paraglidingText, snowParadise, snowParadiseText, img, locationIcon, locationText, price, text, timeIcon, timeText } = props.propsData;
-
+    const { title, postDate, imgURL, _id, author } = props.propsData;
+    const timeIcon = 'https://www.wanderon.in/svg/clock.svg';
+    const locationIcon = 'https://www.wanderon.in/svg/map-pin.svg';
     const content = {
         width: "21vw",
         height: "17vw",
-        backgroundImage: `linear-gradient(to top, rgb(58, 58, 58) 0%, rgba(58, 58, 58, 0.5) 15%, rgba(58, 58, 58, 0) 25%, rgba(58, 58, 58, 0) 100%), url(${img})`,
+        backgroundImage: `linear-gradient(to top, rgb(58, 58, 58) 0%, rgba(58, 58, 58, 0.5) 15%, rgba(58, 58, 58, 0) 25%, rgba(58, 58, 58, 0) 100%), url(${imgURL})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -23,9 +19,10 @@ const CarouselsContent = (props) => {
         alignItems: "flex-end",
         justifyContent: "center",
     }
+
     return (
         <div className='slide-container'>
-            <Link to='/single-blog'>
+            <Link to='/single-blog/'>
                 <div className='slide-content'>
                     <div style={content}>
                     </div>
@@ -35,20 +32,20 @@ const CarouselsContent = (props) => {
                         <div className='slide-info'>
                             <div className='slide-time'>
                                 <img src={timeIcon} alt="" />
-                                {timeText}
+                                {(new Date(postDate).toDateString('dd/MM/yyyy'))}
                             </div>
-                            <div className='slide-location'>
+                            <div className='slide-author'>
                                 <img src={locationIcon} alt="" />
-                                {locationText}
+                                Dhaka
                             </div>
                         </div>
                         <div className='slide-word'>
-                            {text}
+                            {title}
                         </div>
                         <div className='slide-value'>
-                            <span style={{ fontSize: "1vw", fontWeight: "400" }}>Starts at</span>
+                            <span style={{ fontSize: "1vw", fontWeight: "400" }}>Posted By</span>
                             <div>
-                                {price}
+                                {author}
                             </div>
                         </div>
                     </div>

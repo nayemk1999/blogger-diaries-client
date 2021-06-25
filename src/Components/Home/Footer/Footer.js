@@ -28,18 +28,18 @@ const Footer = () => {
             </div>
             <div className='contact-container'>
                 <div className='contact-content'>address</div>
-                <div className='contact-content'>WANDERON TRAVEL COMMUNITY</div>
+                <div className='contact-content'>Bogger Dairies COMMUNITY</div>
                 <div className='contact-content'>17/S2 Instaoffice, Tum Road, Pocket S, Okhla Phase -II</div>
             </div>
             <div className='contact-tech'>
                 <a href="mailto:hello@gmail.com/" alt=''>
-                    hello@wanderon.in
+                    hello@admin.com
                 </a>
-                <a href="tel:+91-8887756502" alt=''>
-                    +91-8887756502
+                <a href="tel:+880-01121112222" alt=''>
+                    +880-01121112222
                 </a>
-                <a href="https://www.wanderon.in" alt=''>
-                    www.wanderon.in
+                <a href="/home" alt=''>
+                    Bogger-Dairies.com
                 </a>
             </div>
         </div>

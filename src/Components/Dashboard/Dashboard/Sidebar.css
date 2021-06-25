@@ -1,6 +1,8 @@
 .sidebar, .dashboardWel {
     background-image: linear-gradient(40deg, #476e67, #215158);
     width: 100%;
+    color: white !important;
+    font-weight: 600;
     /* position: fixed; */
 }
 .dash-container {
@@ -32,4 +34,7 @@
 }
 label{
     color: azure;
+}
+.add-blog span{
+    color: red;
 }

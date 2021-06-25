@@ -12,6 +12,7 @@ import { UserContext } from '../../../App';
 import AddBlog from '../AddBlog/AddBlog';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import NavBar from '../../Home/Header/Navbar/Navbar';
+import ManageBlog from '../ManageBlog/ManageBlog';
 
 const Dashboard = () => {
 
@@ -23,9 +24,9 @@ const Dashboard = () => {
                 <h5 className='text-center p-2 mt-5' >Welcome Admin Dashboard <span className='text-brand'>{loggedInUser.displayName}</span></h5>
             </div>
             <div className="container">
-                <div className=' d-flex row'>
+                <div className='d-flex row'>
                     <Router>
-                        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh", marginLeft: '-18%'}}>
+                        <div className="sidebar d-flex flex-column justify-content-between col-md-3 py-5 px-4" style={{ height: "100vh", marginLeft: '-27vh'}}>
                             <ul className="list-unstyled">
                                 <li>
                                     <Link to="/dashboard" className="text-white">
@@ -43,7 +44,7 @@ const Dashboard = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/dashboard/manageBlogs' className="text-white" >
+                                    <Link to='/dashboard/manage-blogs' className="text-white" >
                                         <FontAwesomeIcon icon={faTasks} /> <span>Manage Blogs</span>
                                     </Link>
                                 </li>
@@ -52,7 +53,7 @@ const Dashboard = () => {
                                 <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
                             </div>
                         </div>
-                        <div className="col-md-10">
+                        <div className="col p-0">
                             <Switch>
                                 <Route path="/dashboard/add-blog">
                                     <AddBlog />
@@ -66,8 +67,8 @@ const Dashboard = () => {
                                 <Route path="/admin">
                                     {/* <AdminPanel /> */}
                                 </Route>
-                                <Route path="/manageService">
-                                    {/* <ManageBlog /> */}
+                                <Route path="/dashboard/manage-blogs">
+                                    <ManageBlog />
                                 </Route>
                                 <Route exact path="/">
                                     {/* <Dashboard /> */}

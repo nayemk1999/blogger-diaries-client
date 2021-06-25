@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { lazy, useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const AddBlog = () => {
     const [uploadImg, setUploadImg] = useState({})
-    const[loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    console.log(uploadImg.display_url);
+    const history = useHistory()
+    
     const onSubmit = data => {
         const newBlog = {
             title: data.title,
@@ -23,9 +25,10 @@ const AddBlog = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBlog)
         })
-         .then(res => {
+            .then(res => {
                 if (res) {
-                    alert('SuccessFully Added Your Blog to MongoDb')
+                    alert('SuccessFully Added Your Blog to MongoDb');
+                    history.push('/dashboard')
                 }
             })
     };
@@ -45,25 +48,30 @@ const AddBlog = () => {
     }
     return (
         <div >
-        <h4>Add Blog:</h4>
-        <form className=" pt-4 pl-1 row" onSubmit={handleSubmit(onSubmit)}>
-            <div className="col-md-6">
-                <label>Blog Title: </label>
-                <input className="form-control" name="title" placeholder="Enter Blog Title Name" {...register("title")} /> <br />
-                <label>Blog Content: </label>
-                <textarea rows="4" cols="50" className="form-control" type="textarea" name="blogContent" placeholder="Enter Blog Content" {...register("blogContent")} /> <br />
-            </div>
-            <div className="col-md-6">
-                <label>Blog Sub Title: </label>
-                <input className="form-control " name="subTitle" placeholder="Enter Sub Title" {...register("author")} /> <br />
-                <label>Author Name: </label>
-                <input className="form-control " name="author" placeholder="Enter Author Name" {...register("author")} /> <br />
-                <label>Add Blog Cover Photo: </label>
-                <input className="form-control pb-3" name="image" type="file"  onChange={handleChangeImg} /> <br />
-            </div>
-            <input style={{ backgroundColor: '#C91729' }} class="text-white btn my-2 my-sm-0 me-md-2 ml-auto" value='Add Blog' type="submit" />
-        </form>
-    </div>
+            <h4 className='text-white p-3'>Add Blog:</h4>
+            <form className=" pt-4 pl-1 row add-blog" onSubmit={handleSubmit(onSubmit)}>
+                <div className="col-md-6">
+                    <label>Blog Title: </label>
+                    <input className="form-control" name="title" placeholder="Enter Blog Title Name" {...register("title", { required: true })} /> <br />
+                    {errors.title && <span>This field is required</span>} <br />
+                    <label>Blog Content: </label>
+                    <textarea rows="4" cols="50" className="form-control" type="textarea" name="blogContent" placeholder="Enter Blog Content" {...register("blogContent", { required: true })} /> <br />
+                    {errors.blogContent && <span>This field is required</span>} <br />
+                </div>
+                <div className="col-md-6">
+                    <label>Blog Sub Title: </label>
+                    <input className="form-control " name="subTitle" placeholder="Enter Sub Title" {...register("subTitle", { required: true })} /> <br />
+                    {errors.subTitle && <span>This field is required</span>} <br />
+                    <label>Author Name: </label>
+                    <input className="form-control " name="author" placeholder="Enter Author Name" {...register("author", { required: true })} /> <br />
+                    {errors.author && <span>This field is required</span>} <br />
+                    <label>Add Blog Cover Photo: </label>
+                    <input className="form-control pb-3" name="image" type="file" {...register("image", { required: true })} onChange={handleChangeImg} /> <br />
+                    {errors.image && <span>This field is required</span>} <br />
+                </div>
+                <input style={{ backgroundColor: '#C91729' }} class="text-white btn my-2 my-sm-0 me-md-2 ml-auto" value='Add Blog' type="submit" />
+            </form>
+        </div>
     );
 };
 

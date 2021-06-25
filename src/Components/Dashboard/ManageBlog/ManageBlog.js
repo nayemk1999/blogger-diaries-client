@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -6,53 +5,59 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { UserContext } from '../../../App';
 
-<i class="fas fa-trash-alt"></i>
 const ManageBlog = () => {
-    const [plans, setPlans] = useState([])
+    const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     useEffect(() => {
-        const url = 'https://noboni-internet-service.herokuapp.com/manageBlogs?email=' + loggedInUser.email;
+        // const url = 'https://noboni-internet-service.herokuapp.com/manageBlogs?email=' + loggedInUser.email;
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setPlans(data)
+        //         setLoading(true)
+        //     })
+        const url = 'http://localhost:3003/allblogs';
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setPlans(data)
+                setBlogs(data)
                 setLoading(true)
             })
 
     }, [])
 
     const deletedProduct = (id) => {
-        const url = `https://noboni-internet-service.herokuapp.com/deleted/${id}`
+        const url = `http://localhost:3003/deleted/${id}`
         fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('SuccessFully Delete your Products from Database.')
+                    alert('SuccessFully Delete your Blogs from Database.')
                 }
             })
     }
     return (
         <div className="">
-            <h1>Manage Service</h1>
-                <table className="table table-striped ">
-                    <thead className='thead-dark'>
+            <h1 className='text-white p-3'>Manage Service</h1>
+                <table className="table table-striped w-100 text-white">
+                    <thead className='dashboardWel'>
                         <tr>
-                            <th scope="col">Package Name</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Blog Title Name</th>
+                            <th scope="col">Author</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {loading && plans.length > 0 ?
-                            plans.map(plan =>
+                        {loading && blogs.length > 0 ?
+                            blogs.map(blog =>
                                 <tr>
-                                    <td>{plan.name}</td>
-                                    <td>$ {plan.price}</td>
-                                    <button className="text-white btn my-2 my-sm-0 me-md-2 ml-3 mt-3" style={{ backgroundColor: '#C91729' }} onClick={() => deletedProduct(plan._id)}><FontAwesomeIcon icon={faTrash} /></button>
+                                    <td>{blog.title}</td>
+                                    <td>{blog.author}</td>
+                                    <button className="text-white btn my-2 my-sm-0 me-md-2 ml-3 mt-3" style={{ backgroundColor: '#C91729' }} onClick={() => deletedProduct(blog._id)}><FontAwesomeIcon icon={faTrash} /></button>
                                 </tr>
                             )
                             :
