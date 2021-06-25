@@ -9,7 +9,7 @@ const ManageBlog = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const url = 'http://localhost:3003/allblogs';
+        const url = 'https://blogger-dairies.herokuapp.com/allblogs';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -20,7 +20,7 @@ const ManageBlog = () => {
     }, [])
 
     const deletedProduct = (id) => {
-        const url = `http://localhost:3003/deleted/${id}`
+        const url = `https://blogger-dairies.herokuapp.com/deleted/${id}`
         fetch(url, {
             method: 'DELETE'
         })

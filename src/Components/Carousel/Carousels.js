@@ -16,7 +16,7 @@ const Carousels = () => {
         slidesPerRow: 1
     };
     useEffect(() => {
-        const url = 'http://localhost:3003/allBlogs'
+        const url = 'https://blogger-dairies.herokuapp.com/allBlogs'
         fetch(url)
         .then(res => res.json())
         .then(data => setBlogs(data))

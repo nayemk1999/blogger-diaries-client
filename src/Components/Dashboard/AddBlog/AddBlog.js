@@ -20,7 +20,7 @@ const AddBlog = () => {
             postDate: new Date(),
             author: data.author
         }
-        fetch('http://localhost:3003/addBlog', {
+        fetch('https://blogger-dairies.herokuapp.com/addBlog', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBlog)

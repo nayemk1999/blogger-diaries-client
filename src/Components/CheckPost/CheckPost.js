@@ -9,7 +9,7 @@ const CheckPost = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 console.log(admin);
     useEffect(() => {
-        const url = 'http://localhost:3003/admin?email=' + loggedInUser.email
+        const url = 'https://blogger-dairies.herokuapp.com/admin?email=' + loggedInUser.email
         fetch(url)
         .then(res => res.json())
         .then(data => setAdmin(data[0]))

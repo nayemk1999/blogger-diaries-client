@@ -11,7 +11,7 @@ const MakeAdmin = () => {
         const newAdmin = {
             email: data.email,
         }
-        fetch('http://localhost:3003/addAdmin', {
+        fetch('https://blogger-dairies.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newAdmin)

@@ -23,7 +23,7 @@ const SingleBlog = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:3003/single-blog/${id.id}`
+        const url = `https://blogger-dairies.herokuapp.com/single-blog/${id.id}`
         fetch(url)
         .then(res => res.json())
         .then(data => setBlog(data))
