@@ -22,7 +22,7 @@ const CarouselsContent = (props) => {
 
     return (
         <div className='slide-container'>
-            <Link to='/single-blog/'>
+            <Link to={'/single-blog/' + _id}>
                 <div className='slide-content'>
                     <div style={content}>
                     </div>

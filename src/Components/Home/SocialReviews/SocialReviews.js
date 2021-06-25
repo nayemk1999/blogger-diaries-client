@@ -21,7 +21,7 @@ const SocialReviews = () => {
     const starIcon = 'https://www.wanderon.in/svg/star.svg'
     return (
         <div className='container '>
-            <h5 style={{fontWeight: '400',color: 'rgb(58, 58, 58)'}}>Get ready for 5-star Expierences with us</h5>
+            <h5 className='text-center' style={{fontWeight: '400',color: 'rgb(58, 58, 58)'}}>Get ready for 5-star Expierences with us</h5>
             <div className='socialReviews-container'>
                 {
                     SocialReviewsData.map(data => 

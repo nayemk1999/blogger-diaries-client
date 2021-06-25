@@ -27,7 +27,7 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
-          <Route path='/single-blog'>
+          <Route path='/single-blog/:id'>
             <SingleBlog />
           </Route>
           <Route path='/login'>
