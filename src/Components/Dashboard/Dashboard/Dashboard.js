@@ -11,16 +11,21 @@ import { faFolder, faGripHorizontal, faPlusCircle, faSignOutAlt, faTasks, faUser
 import { UserContext } from '../../../App';
 import AddBlog from '../AddBlog/AddBlog';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import NavBar from '../../Home/Header/Navbar/Navbar';
 
 const Dashboard = () => {
+
     const [loggedInUser, setloggedInuser] = useContext(UserContext)
     return (
-        <div className=''>
-            <h5 className='text-center dashboardWel p-2' >Welcome Admin Dashboard <span className='text-brand'>{loggedInUser.displayName}</span></h5>
+        <div className='dash-container'>
+            <NavBar />
+            <div className='dashboardWel'>
+                <h5 className='text-center p-2 mt-5' >Welcome Admin Dashboard <span className='text-brand'>{loggedInUser.displayName}</span></h5>
+            </div>
             <div className="container">
                 <div className=' d-flex row'>
                     <Router>
-                        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
+                        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh", marginLeft: '-18%'}}>
                             <ul className="list-unstyled">
                                 <li>
                                     <Link to="/dashboard" className="text-white">
@@ -28,23 +33,18 @@ const Dashboard = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/admin/orderList' className="text-white">
-                                        <FontAwesomeIcon icon={faFolder} /> <span>Order List</span>
+                                    <Link to='/dashboard/add-blog' className="text-white">
+                                        <FontAwesomeIcon icon={faPlusCircle} /> <span>Add Blog</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/admin/addServicePlan' className="text-white">
-                                        <FontAwesomeIcon icon={faPlusCircle} /> <span>Add Service</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to='/admin/addAdmin' className="text-white">
+                                    <Link to='/dashboard/addAdmin' className="text-white">
                                         <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/manageService' className="text-white" >
-                                        <FontAwesomeIcon icon={faTasks} /> <span>Manage Service</span>
+                                    <Link to='/dashboard/manageBlogs' className="text-white" >
+                                        <FontAwesomeIcon icon={faTasks} /> <span>Manage Blogs</span>
                                     </Link>
                                 </li>
                             </ul>
@@ -54,13 +54,13 @@ const Dashboard = () => {
                         </div>
                         <div className="col-md-10">
                             <Switch>
-                                <Route path="/admin/addServicePlan">
+                                <Route path="/dashboard/add-blog">
                                     <AddBlog />
                                 </Route>
                                 <Route path="/admin/orderList">
                                     {/* <OrdersList /> */}
                                 </Route>
-                                <Route path="/admin/addAdmin">
+                                <Route path="/dashboard/addAdmin">
                                     <MakeAdmin />
                                 </Route>
                                 <Route path="/admin">
@@ -70,10 +70,10 @@ const Dashboard = () => {
                                     {/* <ManageBlog /> */}
                                 </Route>
                                 <Route exact path="/">
-                                    <Dashboard />
+                                    {/* <Dashboard /> */}
                                 </Route>
                                 <Route path="/dashboard">
-                                    <Dashboard />
+                                    {/* <Dashboard /> */}
                                 </Route>
                             </Switch>
                         </div>

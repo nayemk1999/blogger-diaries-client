@@ -1,5 +1,11 @@
 import React from 'react';
 import './Carousels.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const CarouselsContent = (props) => {
     const { biking, camping, bikingText, campingText, trekking, trekkingText, paragliding, paraglidingText, snowParadise, snowParadiseText, img, locationIcon, locationText, price, text, timeIcon, timeText } = props.propsData;
@@ -19,33 +25,35 @@ const CarouselsContent = (props) => {
     }
     return (
         <div className='slide-container'>
-            <div className='slide-content'>
-                <div style={content}>      
-                </div>
-            </div>
-            <div >
-                <div className='slide-bottom-content'>
-                    <div className='slide-info'>
-                        <div className='slide-time'>
-                            <img src={timeIcon} alt="" />
-                            {timeText}
-                        </div>
-                        <div className='slide-location'>
-                            <img src={locationIcon} alt="" />
-                            {locationText}
-                        </div>
-                    </div>
-                    <div className='slide-word'>
-                        {text}
-                    </div>
-                    <div className='slide-value'>
-                        <span style={{ fontSize: "1vw", fontWeight: "400" }}>Starts at</span>
-                        <div>
-                            {price}
-                        </div>
+            <Link to='/single-blog'>
+                <div className='slide-content'>
+                    <div style={content}>
                     </div>
                 </div>
-            </div>
+                <div >
+                    <div className='slide-bottom-content'>
+                        <div className='slide-info'>
+                            <div className='slide-time'>
+                                <img src={timeIcon} alt="" />
+                                {timeText}
+                            </div>
+                            <div className='slide-location'>
+                                <img src={locationIcon} alt="" />
+                                {locationText}
+                            </div>
+                        </div>
+                        <div className='slide-word'>
+                            {text}
+                        </div>
+                        <div className='slide-value'>
+                            <span style={{ fontSize: "1vw", fontWeight: "400" }}>Starts at</span>
+                            <div>
+                                {price}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
         </div>
     );
 };

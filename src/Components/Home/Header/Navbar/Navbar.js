@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../../App';
 import ProfilePopper from '../../../ProfilePopper/ProfilePopper';
 import './Navbar.css'
+
 const NavBar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [isSticky, setSticky] = useState(false);
@@ -20,7 +21,7 @@ const NavBar = () => {
     }, []);
 
     return (
-        <Navbar expand="lg" className={(isSticky || isCollapsed) ? "slide in py-1 show shadow-sm navbar navbar-expand-sm nav-bg navbar-light   fixed-top" : "slide out show navbar navbar-expand-sm navbar-light py-1 fixed-top "}>
+        <Navbar expand="lg" className={(isSticky || isCollapsed) ? `slide in py-1 show shadow-sm navbar navbar-expand-sm nav-bg navbar-light fixed-top` : `slide out show navbar navbar-expand-sm navbar-light py-1 fixed-top`}>
             <Container>
                 <Navbar.Brand to='/' > <Image style={{ height: '33px', width: '43px' }} src='https://www.wanderon.in/wanderon-logo.svg' /> </Navbar.Brand>
                 <Navbar.Toggle onClick={() => setCollapsed(!isCollapsed ? 'show' : null)} aria-controls="basic-navbar-nav" style={{ background: 'white' }} />

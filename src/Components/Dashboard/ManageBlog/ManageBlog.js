@@ -13,7 +13,7 @@ const ManageBlog = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     useEffect(() => {
-        const url = 'https://noboni-internet-service.herokuapp.com/managePackage?email=' + loggedInUser.email;
+        const url = 'https://noboni-internet-service.herokuapp.com/manageBlogs?email=' + loggedInUser.email;
         fetch(url)
             .then(res => res.json())
             .then(data => {

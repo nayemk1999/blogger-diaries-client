@@ -33,9 +33,9 @@ function App() {
           <Route path='/login'>
             <LoginForm />
           </Route>
-          {/* <Route path='/dashboard'>
+          <Route path='/dashboard'>
             <Dashboard />
-          </Route> */}
+          </Route>
           <Route path='/register-form'>
             <RegisterForm />
           </Route>
