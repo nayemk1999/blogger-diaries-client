@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../../App';
-import ProfilePopper from '../../../ProfilePopper/ProfilePopper';
 import './Navbar.css'
 
 const NavBar = () => {
@@ -25,12 +24,12 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand to='/' > <Image style={{ height: '33px', width: '43px' }} src='https://www.wanderon.in/wanderon-logo.svg' /> </Navbar.Brand>
                 <Navbar.Toggle onClick={() => setCollapsed(!isCollapsed ? 'show' : null)} aria-controls="basic-navbar-nav" style={{ background: 'white' }} />
-                <Navbar.Collapse id="navbar-nav" className='navbar-content'>
+                <Navbar.Collapse id="navbar-nav">
                     <div className='contact-content'>
                         {/* <img src="https://www.wanderon.in/svg/nav/phone.svg" alt="" /> */}
                         {/* <a href="+91-8887756502" alt='telNumber'>+91-8887756502</a> */}
                     </div>
-                    <Nav className="nav-text text-center">
+                    <Nav className="text-center">
                         <Nav.Link as={Link} to='/home' className="mr-3"><strong>Home</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
@@ -43,12 +42,11 @@ const NavBar = () => {
                         <Nav.Link as={Link} href="#contact" className="mr-3"><strong>Contact</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        <Nav.Link as={Link} to='/dashboard/profile' className="mr-3"><strong>Dashboard</strong>
+                        <Nav.Link as={Link} to='/dashboard' className="mr-3"><strong>Dashboard</strong>
                             <div className="nav-line"></div>
                         </Nav.Link>
-                        {
-                        loggedInUser.email ? <ProfilePopper /> : <Button as={Link} to='/login' variant="info" className='main-button'>Login</Button>
-                    }
+                        
+                        <Button as={Link} to='/dashboard/add-blog' variant="info" className='main-button'>Post Blog</Button> 
                     </Nav>
                 </Navbar.Collapse>
             </Container>

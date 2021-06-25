@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import CarouselsContent from './CarouselsContent';
 import './Carousels.css'
-import { trendingData } from '../SlideData/SlideData';
 
 const Carousels = () => {
     const [blogs, setBlogs] = useState([])
@@ -26,7 +25,7 @@ const Carousels = () => {
     }, [])
     return (
         <div className='mt-3'>
-            <h1 className='mb-3 mt-4'>Top Latest Blogs List</h1>
+            <h1 className='mb-3 mt-4'>Top Latest Blogs</h1>
             <Slider {...settings}>
                     {
                         blogs.map(propsData => <CarouselsContent propsData={propsData} />)

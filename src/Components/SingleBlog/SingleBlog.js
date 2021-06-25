@@ -34,7 +34,7 @@ const SingleBlog = () => {
             <div style={SingleBlogStyle} className='single-blog-container'>
                 <NavBar />
                 <div>
-                    <h1 className='text-white head-title mb-5'>Blog Sub Title........</h1>
+                    <h4 className='text-white head-title mb-5'>Blog Sub Title........</h4>
                     <h1 className='text-white head-title mb-5'>{blog.title}</h1>
                 </div>
             </div>

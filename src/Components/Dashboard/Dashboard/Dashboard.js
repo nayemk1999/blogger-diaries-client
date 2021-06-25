@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFolder, faGripHorizontal, faPlusCircle, faSignOutAlt, faTasks, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faGripHorizontal, faPlusCircle, faSignOutAlt, faTasks, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 import AddBlog from '../AddBlog/AddBlog';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -15,8 +15,8 @@ import NavBar from '../../Home/Header/Navbar/Navbar';
 import ManageBlog from '../ManageBlog/ManageBlog';
 
 const Dashboard = () => {
-
     const [loggedInUser, setloggedInuser] = useContext(UserContext)
+
     return (
         <div className='dash-container'>
             <NavBar />
@@ -26,7 +26,7 @@ const Dashboard = () => {
             <div className="container">
                 <div className='d-flex row'>
                     <Router>
-                        <div className="sidebar d-flex flex-column justify-content-between col-md-3 py-5 px-4" style={{ height: "100vh", marginLeft: '-27vh'}}>
+                        <div className="sidebar d-flex flex-column justify-content-between col-md-3 py-5 px-4" style={{ height: "100vh", marginLeft: '-6%'}}>
                             <ul className="list-unstyled">
                                 <li>
                                     <Link to="/dashboard" className="text-white">
@@ -58,23 +58,13 @@ const Dashboard = () => {
                                 <Route path="/dashboard/add-blog">
                                     <AddBlog />
                                 </Route>
-                                <Route path="/admin/orderList">
-                                    {/* <OrdersList /> */}
-                                </Route>
+
                                 <Route path="/dashboard/addAdmin">
                                     <MakeAdmin />
                                 </Route>
-                                <Route path="/admin">
-                                    {/* <AdminPanel /> */}
-                                </Route>
+
                                 <Route path="/dashboard/manage-blogs">
                                     <ManageBlog />
-                                </Route>
-                                <Route exact path="/">
-                                    {/* <Dashboard /> */}
-                                </Route>
-                                <Route path="/dashboard">
-                                    {/* <Dashboard /> */}
                                 </Route>
                             </Switch>
                         </div>

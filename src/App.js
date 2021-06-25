@@ -11,6 +11,8 @@ import LoginForm from './Components/FormCreate/LoginForm';
 import RegisterForm from './Components/FormCreate/RegisterForm';
 import SingleBlog from './Components/SingleBlog/SingleBlog';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import CheckPost from './Components/CheckPost/CheckPost';
 
 export const UserContext = createContext()
 
@@ -33,9 +35,9 @@ function App() {
           <Route path='/login'>
             <LoginForm />
           </Route>
-          <Route path='/dashboard'>
-            <Dashboard />
-          </Route>
+          <PrivateRoute path='/dashboard'>
+            <CheckPost />
+          </PrivateRoute>
           <Route path='/register-form'>
             <RegisterForm />
           </Route>

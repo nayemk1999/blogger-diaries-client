@@ -4,20 +4,9 @@
     padding-top: 0 !important;
 }
 
-.contact-content img {
-    height: 1.3vw;
-    margin-right: 1vh;
-}
-
-.contact-content a {
-    font-size: 1vw;
-    font-weight: 400;
-    color: white;
-}
-
 .navbar-light .navbar-nav .nav-link {
     color: rgb(255 255 255 / 78%) !important;
-    font-size: 1.9vh;
+    font-size: 2.9vh;
     font-weight: 400;
 }
 

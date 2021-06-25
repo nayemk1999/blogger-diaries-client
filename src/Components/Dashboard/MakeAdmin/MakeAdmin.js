@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import { UserContext } from '../../../App';
 
 const MakeAdmin = () => {
-    const[loggedInUser, setLoggedInUser] = useContext(UserContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const history = useHistory()
 
@@ -20,7 +19,7 @@ const MakeAdmin = () => {
          .then(res => {
                 if (res) {
                     alert('SuccessFully Added Admin')
-                    history.push('/admin/addAdmin')
+                    history.push('/dashboard/addAdmin')
                 }
             })
     };

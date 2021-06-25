@@ -102,7 +102,7 @@ const LoginForm = () => {
                             <Link className="a" to="/register-form">Sign Up</Link>
                         </div>
                         <input onClick={loginForm} type="submit" class="login-btn" value="Login" />
-                        <button onClick={googleLogin} class="login-btn" value="">Login With Google</button>
+                        {/* <button onClick={googleLogin} class="login-btn" value="">Login With Google</button> */}
                     </div>
                 </div>
             </div>

@@ -3,21 +3,12 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { UserContext } from '../../../App';
 
 const ManageBlog = () => {
     const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(false);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     useEffect(() => {
-        // const url = 'https://noboni-internet-service.herokuapp.com/manageBlogs?email=' + loggedInUser.email;
-        // fetch(url)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setPlans(data)
-        //         setLoading(true)
-        //     })
         const url = 'http://localhost:3003/allblogs';
         fetch(url)
             .then(res => res.json())
