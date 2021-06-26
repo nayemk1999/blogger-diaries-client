@@ -25,7 +25,7 @@ const SocialReviews = () => {
             <div className='socialReviews-container'>
                 {
                     SocialReviewsData.map(data => 
-                        <a href="#" alt=''>
+                        <a href="/" alt=''>
                             <div className='reviewItem'>
                                 <img style={{ height: '4.1vw' }} src={data.img} alt="" />
                                 <div className='socialRating'>

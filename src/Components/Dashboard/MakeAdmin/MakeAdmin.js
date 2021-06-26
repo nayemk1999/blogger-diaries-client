@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
-import { UserContext } from '../../../App';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: {  } } = useForm();
     const history = useHistory()
 
     const onSubmit = data => {

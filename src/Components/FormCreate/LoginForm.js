@@ -34,26 +34,26 @@ const LoginForm = () => {
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                alert(errorMessage);
+                alert(errorMessage, errorCode);
             });
     }
 
-    const googleLogin = () => {
-        const gProvider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth()
-            .signInWithPopup(gProvider)
-            .then((result) => {
-                const user = result.user;
-                setLoggedInUser(user);
-                history.replace(from)
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const email = error.email;
-                alert(errorMessage)
-                console.log(errorCode, email, errorMessage);
-            });
-    }
+    // const googleLogin = () => {
+    //     const gProvider = new firebase.auth.GoogleAuthProvider();
+    //     firebase.auth()
+    //         .signInWithPopup(gProvider)
+    //         .then((result) => {
+    //             const user = result.user;
+    //             setLoggedInUser(user);
+    //             history.replace(from)
+    //         }).catch((error) => {
+    //             const errorCode = error.code;
+    //             const errorMessage = error.message;
+    //             const email = error.email;
+    //             alert(errorMessage)
+    //             console.log(errorCode, email, errorMessage);
+    //         });
+    // }
 
     const handleFocus = (e) => {
         let parent = e.target.parentNode.parentNode;
@@ -63,7 +63,7 @@ const LoginForm = () => {
     const handleBlur = (e) => {
         let value = e.target.value;
         let parent = e.target.parentNode.parentNode;
-        if (value == "") {
+        if (value === "") {
             parent.classList.remove('focus')
         }
     }

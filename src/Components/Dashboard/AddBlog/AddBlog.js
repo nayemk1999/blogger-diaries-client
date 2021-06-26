@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { lazy, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
@@ -7,7 +7,7 @@ import { UserContext } from '../../../App';
 const AddBlog = () => {
     const [uploadImg, setUploadImg] = useState({})
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const history = useHistory()
     
     const onSubmit = data => {
