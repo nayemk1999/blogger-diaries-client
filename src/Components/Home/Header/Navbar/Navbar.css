@@ -30,9 +30,9 @@
 
 .main-button {
     font-size: 1.9vh;
-    font-weight: 400;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
+    font-weight: bold !important;
+    padding: 0.5rem 1rem !important;
+    /* border-radius: 25px !important; */
     background: #17a2b8;
     color: #fff;
     border: 0;
