@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './FormStyle/FormStyle.css'
 import wave from './image/wave.png';
 import bg from './image/bg.svg';
@@ -23,14 +23,14 @@ const RegisterForm = () => {
         e.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                const user = userCredential.user;
+                // const user = userCredential.user;
                 alert('SuccessFully Create Account')
                 history.push('/login')
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                alert(errorMessage)
+                alert(errorMessage, errorCode)
             });
     }
 
@@ -41,7 +41,7 @@ const RegisterForm = () => {
     const handleBlur = (e) => {
         let value = e.target.value;
         let parent = e.target.parentNode.parentNode;
-        if (value == "") {
+        if (value === "") {
             parent.classList.remove('focus')
         }
     }

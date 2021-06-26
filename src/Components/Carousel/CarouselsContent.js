@@ -1,3 +1,5 @@
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Carousels.css'
@@ -34,7 +36,7 @@ const CarouselsContent = (props) => {
                                 <img src={timeIcon} alt="" />
                                 {(new Date(postDate).toDateString('dd/MM/yyyy'))}
                             </div>
-                            <div className='slide-author'>
+                            <div className='slide-location'>
                                 <img src={locationIcon} alt="" />
                                 Dhaka
                             </div>
@@ -45,7 +47,7 @@ const CarouselsContent = (props) => {
                         <div className='slide-value'>
                             <span style={{ fontSize: "1vw", fontWeight: "400" }}>Posted By</span>
                             <div>
-                                {author}
+                                <FontAwesomeIcon style={{color: 'rgb(10, 158, 136)'}} icon={faUser} /> {author}
                             </div>
                         </div>
                     </div>

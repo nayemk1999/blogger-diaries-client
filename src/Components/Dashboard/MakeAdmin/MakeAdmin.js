@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, formState: {  } } = useForm();
+    const { register, handleSubmit} = useForm();
     const history = useHistory()
 
     const onSubmit = data => {

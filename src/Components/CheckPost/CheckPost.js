@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Dashboard from '../Dashboard/Dashboard/Dashboard';
 import Home from '../Home/Home/Home';
