@@ -11,7 +11,6 @@ import {
 import LoginForm from './Components/FormCreate/LoginForm';
 import RegisterForm from './Components/FormCreate/RegisterForm';
 import SingleBlog from './Components/SingleBlog/SingleBlog';
-import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import CheckPost from './Components/CheckPost/CheckPost';
 
